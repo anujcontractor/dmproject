@@ -13,6 +13,7 @@ body{
     margin: 35px 35px;
 }
 .text-center{
+    background-color: aqua;
     text-align: center;
     margin: 30px 20px;
     padding: 35px;
@@ -37,7 +38,7 @@ body{
 .btn{
     border: 2px solid black;
     padding: 8px 17px;
-    margin: 29px 212px;
+    margin: 30px 206px;
     border-radius: 8px;
     color: black;
     cursor: pointer;

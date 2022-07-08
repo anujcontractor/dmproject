@@ -8,7 +8,8 @@ var bn;
 function func() {
     // var bn = addBin("aabb0918","243f6a88");
     bn = encrypt(string.value);
-    op.innerHTML = bn;
+    //op.innerHTML = bn;
+    op.innerHTML = hex2string("416e756a");
 }
 
 function func1() {
@@ -157,7 +158,7 @@ var s = [["d1310ba6", "98dfb5ac", "2ffd72db", "d01adfb7", "b8e1afed", "6a267e96"
     "90d4f869","a65cdea0","3f09252d","c208e69f","b74e6132","ce77e25b","578fdfe3","3ac372e6"]];
 
 
-
+//9516516c01420e63
 
 function xor(hex1, hex2){
     var int = parseInt(hex1,16) ^ parseInt(hex2,16);
@@ -222,7 +223,14 @@ function encrypt(playtext){
 
     subKeys();
     //var text = split(playtext);
-    var text = playtext;
+    var text = string2hex(playtext);
+    //var text = playtext;
+
+    if(text.length < 16){
+        for(var j=0 ; j<= 16 - text.length ; j++){
+            text = "0" + text;
+        }
+    }
 
     for(var i=0 ; i<16 ; i++){
         text = round(i,text);
@@ -302,6 +310,14 @@ function funcF(text){
     return ans;
 }
 
+function hex2string(hex){
+    var str = '';
+    for(var i=0 ; i< hex.length; i+=2){
+        var v = parseInt(hex.substr(1,2),16);
+        if(v) str += String.fromCharCode(v);
+    }
+    return str;
+}
 
 function decrypt(cyphertext){
     subKeys();
@@ -313,5 +329,7 @@ function decrypt(cyphertext){
     var left = cyphertext.substring(8, 16);
     right = xor(right, p[1]);
     left = xor(left, p[0]);
-    return left + right;
+    var ans = left + right;
+    ans = hex2string(ans);
+    return ans;
 }
