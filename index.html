@@ -5,17 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Cryptography and Security</title>
+    <title>Cryptography using Blowfish Algorithm</title>
 </head>
 <body>
     <section class="Encryption">
-        <h2 class="text-center">BlowFish</h2>
+        <h2 class="text-center">Encryption</h2>
         <div class="form">
-            <textarea class="form-input" name="string" id="string" cols="30" rows="10" placeholder="Enter string for encoding"></textarea>
+            <textarea class="form-input" name="string" id="string" cols="30" rows="10" placeholder="Enter string for encoding" style="width: 868px; height: 182px;"></textarea>
             <input class="form-input" type="text" name="key" id="key" placeholder="Enter the secret key">
+            
             <button class="btn" id="btn">Encrypt</button>
-            <h1 class="output" id="op"></h1>
-            <button class="btn" id="print">Decrypt</button>
+            <p class="text" id="encrypt">Encrypted Text is: </p>
+            <textarea class="output" id="enc" style="width: 868px; height: 213px; font-size: 20px;"></textarea>
+            <button class="btnn" id="cpy">Copy</button>
+        </div>
+    </section>
+    <section class="Decryption">
+        <h2 class="text-center">Decryption</h2>
+        <div class="form">
+            <textarea class="form-input" name="string" id="string2" cols="30" rows="10" placeholder="Enter string for decoding" style="width: 868px; height: 182px;"></textarea>
+            <input class="form-input" type="text" name="key2" id="key2" placeholder="Enter the secret key">
+            <button class="btn" id="btn2">Decrypt</button>
+            <p class="text" id="decrypt">Decrypted Text is: </p>
+            <textarea class="output" id="dec" style="width: 868px; height: 213px; font-size: 20px;"></textarea>
         </div>
     </section>
     <script src="logic.js"></script>
